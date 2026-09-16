@@ -1,0 +1,20 @@
+[project]
+name = "technocore-room-backup"
+version = "0.1.0"
+description = "Community read-only backup utility for retained Technocore room exports"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "ruff==0.16.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+

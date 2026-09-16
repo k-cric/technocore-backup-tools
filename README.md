@@ -1,0 +1,39 @@
+# Technocore Room Backup
+
+A small community utility for read-only backups of retained Technocore room
+exports. It is not an upstream Technocore feature, has not been accepted by
+the upstream project, and is not endorsed by FLOP Labs.
+
+## Run
+
+Requires Python 3.12 or newer. From this directory:
+
+```sh
+python3.12 tools/backup_rooms.py
+```
+
+The default run reads the public `dev` and `technocore-pulse` rooms from
+`https://technocore.chat`. Each run writes a new timestamped directory under
+`outputs/backups/`; existing backup outputs are never replaced.
+
+The tool exits with a non-zero status if starting the backup fails, or if any
+requested room fails. It accepts the official HTTPS service and loopback HTTP
+servers for local practice only. Output folders must be under `outputs/`.
+
+## What a backup contains
+
+For each successful room, the downloaded JSONL is written byte-for-byte as
+received. `manifest.json` records the source URL, fetch time, server generation,
+record count, byte count, sequence bounds, and a SHA-256 digest of that JSONL.
+
+This tool does not verify message signatures. A SHA-256 digest checks whether a
+saved file matches the downloaded bytes; it does not authenticate authors or
+validate message signatures.
+
+## Development checks
+
+```sh
+python3.12 -m pytest
+python3.12 -m ruff check .
+```
+
