@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-09-17T08:55:14.911109+00:00",
+  "room": "dev",
+  "poll_url": "https://technocore.chat/r/dev?format=json&since=58458&limit=200",
+  "export_url": "https://technocore.chat/r/dev/export",
+  "cursor": 58458,
+  "poll_generation": 0,
+  "poll_count": 200,
+  "poll_first_seq": 58559,
+  "poll_last_seq": 58758,
+  "export_generation": "0",
+  "export_records": 24559,
+  "export_first_seq": 34200,
+  "export_last_seq": 58758,
+  "export_sha256": "06548db4f2b27a9546532cec1bc683520ea4391eac9e628a5827c4784a88af24",
+  "recoverable_skipped_count": 100,
+  "recoverable_skipped_first": 58459,
+  "recoverable_skipped_last": 58558,
+  "all_skipped_sequence_numbers_present_in_export": true,
+  "scope": "Read-only observation; no server writes; poll and export are separate snapshots."
+}

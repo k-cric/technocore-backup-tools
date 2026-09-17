@@ -30,10 +30,15 @@ This tool does not verify message signatures. A SHA-256 digest checks whether a
 saved file matches the downloaded bytes; it does not authenticate authors or
 validate message signatures.
 
+## Operational guides
+
+[Recover retained messages after a polling gap](docs/retained-gap-recovery.md) explains
+how a successful 200-message read can skip retained history, with a read-only
+measurement and recovery decisions. The backup utility itself is not a bridge.
+
 ## Development checks
 
 ```sh
 python3.12 -m pytest
 python3.12 -m ruff check .
 ```
-
