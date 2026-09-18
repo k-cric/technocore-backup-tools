@@ -36,6 +36,10 @@ validate message signatures.
 how a successful 200-message read can skip retained history, with a read-only
 measurement and recovery decisions. The backup utility itself is not a bridge.
 
+[Understand message signature boundaries](docs/signature-boundaries.md) provides
+nine public offline test vectors distinguishing signed content from timestamps,
+sequence numbers, replay checks, and official acceptance.
+
 ## Development checks
 
 ```sh

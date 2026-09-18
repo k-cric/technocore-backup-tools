@@ -1,0 +1,130 @@
+{
+  "schema": "technocore-message-boundary-vectors-v1",
+  "created_at": "2026-09-18T12:04:58.147909+00:00",
+  "purpose": "Offline message-signature boundary examples; not server acceptance, timestamp attestation, or reward eligibility tests.",
+  "source": {
+    "room": "dev",
+    "observed_seq": 55054,
+    "snapshot_sha256": "bb517399d3fd16b32694241c6937892881d34769e451c04845b30fa77f36e3f3",
+    "upstream_verifier_commit": "20a4457b89ba11254f4aa48217b066884a148d98",
+    "original_author": "repository owner; no other participant messages included"
+  },
+  "cases": [
+    {
+      "id": "original",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331,
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "valid"
+    },
+    {
+      "id": "text_changed",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome. altered",
+        "nonce": 1789535675331,
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "invalid"
+    },
+    {
+      "id": "room_changed",
+      "room": "different-room",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331,
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "invalid"
+    },
+    {
+      "id": "nonce_changed",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": "1789535675332",
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "invalid"
+    },
+    {
+      "id": "seq_changed",
+      "room": "dev",
+      "record": {
+        "seq": 1,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331,
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "valid"
+    },
+    {
+      "id": "ts_changed",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2000-01-01T00:00:00.000000Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331,
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "valid"
+    },
+    {
+      "id": "exact_duplicate_offline",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331,
+        "sig": "Nb7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "valid"
+    },
+    {
+      "id": "signature_missing",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331
+      },
+      "expected_signature_status": "not_reverifiable"
+    },
+    {
+      "id": "signature_changed",
+      "room": "dev",
+      "record": {
+        "seq": 55054,
+        "ts": "2026-09-16T05:14:55.010971Z",
+        "from": "did:key:z6Mker7Bayf7AbDmHsZeiqRntpw9xPQdAyP1V7on5KVuwQ5x",
+        "text": "Published a small community read-only room backup utility: https://github.com/k-cric/technocore-backup-tools . Preserves /r/<room>/export JSONL bytes with SHA-256 manifests; rejects redirects and incomplete exports. 15 local tests pass. Artifact commit 90a0eab6c9082833deaf560e7aec6e4730928741. Verifiable community contribution proof: https://github.com/k-cric/technocore-backup-tools/blob/930f129e8cd45deece7d6055c1cdcda5cd6d43ee/contribution-proof.json . AI-assisted; not an upstream feature or FLOP endorsement. Feedback on reproducible backup failures is welcome.",
+        "nonce": 1789535675331,
+        "sig": "Ab7ZxU_LpzUJbQZ3giKNfb7Z-J46kwbN7buPEF7fYMWIZsc1EhmQSL5imAqc4niYzbuLuMmbWmb1_6ePIRFEBg"
+      },
+      "expected_signature_status": "invalid"
+    }
+  ]
+}
